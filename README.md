@@ -1,2 +1,0 @@
-# todo-devops
-project devops
