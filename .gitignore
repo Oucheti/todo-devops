@@ -11,10 +11,9 @@ reinitialiseterra.txt
 *.tfstate.backup
 *.tfvars
 .terraform.lock.hcl
-
+images/
+*.backup
 *.ovf
 *.vmdk
 *.box
 *.iso
-
-infrastructure/
