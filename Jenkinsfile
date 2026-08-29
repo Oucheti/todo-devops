@@ -17,13 +17,17 @@ pipeline {
 
         stage('Install dependencies') {
             steps {
-                sh 'npm ci'
+                dir('app') {
+					sh 'npm ci'
+				}
             }
         }
 
         stage('Unit tests') {
             steps {
-                sh 'npm test'
+                dir('app') {
+					sh 'npm test'
+				}
             }
         }
 
