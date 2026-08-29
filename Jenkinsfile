@@ -72,7 +72,7 @@ pipeline {
         stage('Deploy Kubernetes') {
             steps {
                 sh '''
-                    kubectl apply -f k8s/
+                    kubectl apply -f app/k8s/
 
                     kubectl set image deployment/todo-app \
                         todo-app=${DOCKER_IMAGE}:${BUILD_NUMBER}
