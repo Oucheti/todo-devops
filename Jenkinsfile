@@ -33,11 +33,12 @@ pipeline {
 
         stage('Build Docker image') {
             steps {
-                sh """
-                    docker build \
-                        -t ${DOCKER_IMAGE}:${BUILD_NUMBER} \
-                        -t ${DOCKER_IMAGE}:latest .
-                """
+				dir('app') {	
+					sh """
+						docker build \
+							-t ${DOCKER_IMAGE}:${BUILD_NUMBER} \
+							-t ${DOCKER_IMAGE}:latest .
+				}	"""
             }
         }
 
@@ -47,7 +48,7 @@ pipeline {
                 withCredentials([
                     usernamePassword(
                         credentialsId: "${DOCKER_CREDENTIALS}",
-                        usernameVariable: 'aoucheti',
+                        usernameVariable: 'DOCKER_USERNAME',
                         passwordVariable: 'DOCKER_PASSWORD'
                     )
                 ]) {
