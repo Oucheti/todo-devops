@@ -390,7 +390,7 @@ Fonctionnalités principales :
 Cloner le dépôt :
 
 ```bash
-git clone https://github.com/USERNAME/todo-devops.git
+git clone https://github.com/Oucheti/todo-devops.git
 ```
 
 Entrer dans le projet :
